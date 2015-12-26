@@ -54,6 +54,9 @@ LIBAO_EXTERN(pcm)
 static char *ao_outputfilename = NULL;
 static int ao_pcm_waveheader = 1;
 static int fast = 0;
+static double last_pts_pcm = 0;
+static int send_pts_pcm = 0;
+static int verbose_level_pcm = 0;
 
 #define WAV_ID_RIFF 0x46464952 /* "RIFF" */
 #define WAV_ID_WAVE 0x45564157 /* "WAVE" */
@@ -76,6 +79,14 @@ static void fput16le(uint16_t val, FILE *fp) {
 static void fput32le(uint32_t val, FILE *fp) {
     uint8_t bytes[4] = {val, val >> 8, val >> 16, val >> 24};
     fwrite(bytes, 1, 4, fp);
+}
+
+static void write_extra_header()
+{
+    int use_waveex = (ao_data.channels >= 5 && ao_data.channels <= 8);
+    uint32_t wave_header_size = use_waveex ? 68 : 44;
+    fprintf(fp, "CUSTOM_PTS_FORMAT\nHEADER_SIZE\n");
+    fwrite(&wave_header_size, 1, 4, fp);
 }
 
 static void write_wave_header(FILE *fp, uint64_t data_length) {
@@ -130,8 +141,19 @@ static void write_wave_header(FILE *fp, uint64_t data_length) {
     fput32le(data_length, fp);
 }
 
+static int set_last_pts_pcm(double pts)
+{
+    last_pts_pcm = pts;
+    return CONTROL_TRUE;
+}
+
 // to set/get/query special features/parameters
 static int control(int cmd,void *arg){
+    switch (cmd) {
+        case AOCONTROL_SETPTS:
+            return set_last_pts_pcm(*((double*)arg));
+    }
+
     return -1;
 }
 
@@ -142,6 +164,8 @@ static int init(int rate,int channels,int format,int flags){
         {"waveheader", OPT_ARG_BOOL, &ao_pcm_waveheader, NULL},
         {"file",       OPT_ARG_MSTRZ, &ao_outputfilename, NULL},
         {"fast",       OPT_ARG_BOOL, &fast, NULL},
+        {"pts",        OPT_ARG_BOOL,  &send_pts_pcm},
+        {"verbose",    OPT_ARG_INT,  &verbose_level_pcm},
         {NULL}
     };
     // set defaults
@@ -189,6 +213,7 @@ static int init(int rate,int channels,int format,int flags){
     fp = fopen(ao_outputfilename, "wb");
     if(fp) {
         if(ao_pcm_waveheader){ /* Reserve space for wave header */
+            if (send_pts_pcm) write_extra_header();
             write_wave_header(fp, 0x7ffff000);
         }
         return 1;
@@ -215,6 +240,7 @@ static void uninit(int immed){
                 mp_msg(MSGT_AO, MSGL_ERR, "File larger than allowed for WAV files, may play truncated!\n");
                 data_length = 0xfffff000;
             }
+            if (send_pts_pcm) write_extra_header();
             write_wave_header(fp, data_length);
         }
     }
@@ -248,6 +274,21 @@ static int get_space(void){
     return ao_data.outburst;
 }
 
+static void pcm_put_pts()
+{
+    uint64_t intpts_ms = (uint64_t)((last_pts_pcm * 1000) + 0.5);
+    fprintf(fp, "PTS\n");
+
+    if (verbose_level_pcm >= 1) printf("\nPCM: Writing pts: %lu\n", intpts_ms);
+    fwrite(&intpts_ms,1,8,fp);
+}
+
+static void pcm_put_chunk_size(uint32_t size)
+{
+    fprintf(fp, "CHUNK_SIZE\n");
+    fwrite(&size,1,4,fp);
+}
+
 // plays 'len' bytes of 'data'
 // it should round it down to outburst*n
 // return: number of bytes played
@@ -262,7 +303,14 @@ static int play(void* data,int len,int flags){
                             len / frame_size, frame_size);
     }
 
-    //printf("PCM: Writing chunk!\n");
+
+    if (send_pts_pcm)
+    {
+        pcm_put_chunk_size(len);
+        pcm_put_pts();
+    }
+
+    if (verbose_level_pcm >= 1) printf("\nPCM: Writing chunk, size = %d\n", len);
     fwrite(data,len,1,fp);
 
     if(ao_pcm_waveheader)

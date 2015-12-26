@@ -83,6 +83,7 @@ void mp_ao_resume_refill(const ao_functions_t *ao, int prepause_space);
 #define AOCONTROL_SET_PLUGIN_DRIVER 6
 #define AOCONTROL_SET_PLUGIN_LIST 7
 #define AOCONTROL_FILENAME 8
+#define AOCONTROL_SETPTS 9
 
 #define AOPLAY_FINAL_CHUNK 1
 

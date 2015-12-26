@@ -72,12 +72,16 @@ static int image_width = 0;
 static int image_height = 0;
 static float image_fps = 0;
 
+static double last_pts_y4m = 0;
+
 static uint8_t *image = NULL;
 static uint8_t *image_y = NULL;
 static uint8_t *image_u = NULL;
 static uint8_t *image_v = NULL;
 
 static char *yuv_filename = NULL;
+static int send_pts_y4m = 0;
+static int verbose_level_y4m = 0;
 
 static int using_format = 0;
 static FILE *yuv_out;
@@ -91,10 +95,19 @@ static int write_bytes;
 static int config_interlace = Y4M_ILACE_NONE;
 #define Y4M_IS_INTERLACED (config_interlace != Y4M_ILACE_NONE)
 
+static void vo_y4m_write(const void *ptr, const size_t num_bytes)
+{
+    if (fwrite(ptr, 1, num_bytes, yuv_out) != num_bytes)
+        mp_msg(MSGT_VO,MSGL_ERR,
+            MSGTR_VO_YUV4MPEG_OutFileWriteError);
+    fflush(yuv_out);
+}
+
 static int config(uint32_t width, uint32_t height, uint32_t d_width,
        uint32_t d_height, uint32_t flags, char *title,
        uint32_t format)
 {
+    char strbuf[4096];
 	AVRational pixelaspect = av_div_q((AVRational){d_width, d_height},
 	                                  (AVRational){width, height});
 	AVRational fps_frac = av_d2q(vo_fps, vo_fps * 1001 + 2);
@@ -146,11 +159,19 @@ static int config(uint32_t width, uint32_t height, uint32_t d_width,
 	image_u = image_y + image_width * image_height;
 	image_v = image_u + image_width * image_height / 4;
 
-	fprintf(yuv_out, "YUV4MPEG2 W%d H%d F%d:%d I%c A%d:%d\n",
+
+    sprintf(strbuf, "YUV4MPEG2 W%d H%d F%d:%d I%c A%d:%d\n",
 			image_width, image_height, fps_frac.num, fps_frac.den,
 			config_interlace,
 			pixelaspect.num, pixelaspect.den);
 
+    if (send_pts_y4m)
+    {
+        uint32_t s = strlen(strbuf);
+        fprintf(yuv_out, "CUSTOM_PTS_FORMAT\nHEADER_SIZE\n");
+        vo_y4m_write(&s, 4);
+    }
+    fprintf(yuv_out, strbuf);
 	fflush(yuv_out);
 	return 0;
 }
@@ -166,27 +187,44 @@ static void draw_osd(void)
     vo_draw_text(image_width, image_height, draw_alpha);
 }
 
-static void vo_y4m_write(const void *ptr, const size_t num_bytes)
+static void y4m_put_pts(void)
 {
-	if (fwrite(ptr, 1, num_bytes, yuv_out) != num_bytes)
-		mp_msg(MSGT_VO,MSGL_ERR,
-			MSGTR_VO_YUV4MPEG_OutFileWriteError);
-	fflush(yuv_out);
+    uint64_t intpts_ms = (uint64_t)((last_pts_y4m * 1000) + 0.5);
+    fprintf(yuv_out, "PTS\n");
+
+    if (verbose_level_y4m >= 1) printf("\nYUV4MPEG: Writing pts: %lu\n", intpts_ms);
+    vo_y4m_write(&intpts_ms, 8);
+}
+
+static void y4m_put_chunk_size(uint32_t size)
+{
+    fprintf(yuv_out, "CHUNK_SIZE\n");
+    vo_y4m_write(&size, 4);
+}
+
+static void put_frame(void)
+{
+    if (send_pts_y4m)
+    {
+        y4m_put_chunk_size(write_bytes + 6); //6 is strlen of "FRAME\n"
+        y4m_put_pts();
+    }
+
+    if (verbose_level_y4m >= 1) printf("\nYUV4MPEG: Writing chunk, size = %d\n", write_bytes + 6);
+
+    fprintf(yuv_out, "FRAME\n");
+    vo_y4m_write(image, write_bytes);
 }
 
 static int write_last_frame(void)
 {
-    fprintf(yuv_out, "FRAME\n");
-
-    vo_y4m_write(image, write_bytes);
+    put_frame();
     return VO_TRUE;
 }
 
 static void flip_page (void)
 {
-	fprintf(yuv_out, "FRAME\n");
-
-	vo_y4m_write(image, write_bytes);
+    put_frame();
 }
 
 static int draw_slice(uint8_t *srcimg[], int stride[], int w,int h,int x,int y)
@@ -258,6 +296,8 @@ static int preinit(const char *arg)
     {"interlaced",    OPT_ARG_BOOL, &il,    NULL},
     {"interlaced_bf", OPT_ARG_BOOL, &il_bf, NULL},
     {"file",          OPT_ARG_MSTRZ,  &yuv_filename,  NULL},
+    {"pts",           OPT_ARG_BOOL,  &send_pts_y4m},
+    {"verbose",       OPT_ARG_INT,  &verbose_level_y4m},
     {NULL}
   };
 
@@ -294,6 +334,12 @@ static int preinit(const char *arg)
     return 0;
 }
 
+static int set_last_pts_y4m(double pts)
+{
+    last_pts_y4m = pts;
+    return VO_TRUE;
+}
+
 static int control(uint32_t request, void *data)
 {
   switch (request) {
@@ -301,6 +347,8 @@ static int control(uint32_t request, void *data)
     return query_format(*((uint32_t*)data));
   case VOCTRL_DUPLICATE_FRAME:
     return write_last_frame();
+  case VOCTRL_SETPTS:
+    return set_last_pts_y4m(*((double*)data));
   }
   return VO_NOTIMPL;
 }

@@ -101,6 +101,8 @@ typedef struct {
   int w,h;
 } mp_win_t;
 
+#define VOCTRL_SETPTS 24
+
 #define VO_TRUE      1
 #define VO_FALSE     0
 #define VO_ERROR    -1

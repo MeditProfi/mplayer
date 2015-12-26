@@ -2077,6 +2077,25 @@ static void mp_dvdnav_save_smpi(int in_size,
 
 #endif /* CONFIG_DVDNAV */
 
+static double get_apts(void)
+{
+    if (autosync)
+        /*
+         * If autosync is enabled, the value for delay must be calculated
+         * a bit differently.  It is set only to the difference between
+         * the audio and video timers.  Any attempt to include the real
+         * or corrected delay causes the pts_correction code below to
+         * try to correct for the changes in delay which autosync is
+         * trying to measure.  This keeps the two from competing, but still
+         * allows the code to correct for PTS drift *only*.  (Using a delay
+         * value here, even a "corrected" one, would be incompatible with
+         * autosync mode.)
+         */
+        return written_audio_pts(mpctx->sh_audio, mpctx->d_audio) - mpctx->delay;
+    else
+        return playing_audio_pts(mpctx->sh_audio, mpctx->d_audio, mpctx->audio_out);
+}
+
 static void adjust_sync_and_print_status(int between_frames, float timing_error)
 {
     current_module = "av_sync";
@@ -2084,21 +2103,7 @@ static void adjust_sync_and_print_status(int between_frames, float timing_error)
     if (mpctx->sh_audio) {
         double a_pts, v_pts;
 
-        if (autosync)
-            /*
-             * If autosync is enabled, the value for delay must be calculated
-             * a bit differently.  It is set only to the difference between
-             * the audio and video timers.  Any attempt to include the real
-             * or corrected delay causes the pts_correction code below to
-             * try to correct for the changes in delay which autosync is
-             * trying to measure.  This keeps the two from competing, but still
-             * allows the code to correct for PTS drift *only*.  (Using a delay
-             * value here, even a "corrected" one, would be incompatible with
-             * autosync mode.)
-             */
-            a_pts = written_audio_pts(mpctx->sh_audio, mpctx->d_audio) - mpctx->delay;
-        else
-            a_pts = playing_audio_pts(mpctx->sh_audio, mpctx->d_audio, mpctx->audio_out);
+        a_pts = get_apts();
 
         v_pts = mpctx->sh_video->pts;
 
@@ -2230,6 +2235,9 @@ static int fill_audio_out_buffers(void)
         // They're obviously badly broken in the way they handle av sync;
         // would not having access to this make them more broken?
         ao_data.pts = ((mpctx->sh_video ? mpctx->sh_video->timer : 0) + mpctx->delay) * 90000.0;
+
+        double apos_to_ao = get_apts() - audio_delay;
+        mpctx->audio_out->control(AOCONTROL_SETPTS, (void*)&apos_to_ao);
         playsize    = mpctx->audio_out->play(sh_audio->a_out_buffer, playsize, playflags);
 
         if (playsize > 0) {
@@ -3913,7 +3921,10 @@ goto_enable_cache:
                         unsigned int t2 = GetTimer();
 
                         if (vo_config_count)
+                        {
+                            mpctx->video_out->control(VOCTRL_SETPTS, &mpctx->sh_video->pts);
                             mpctx->video_out->flip_page();
+                        }
                         mpctx->num_buffered_frames--;
 
                         vout_time_usage += (GetTimer() - t2) * 0.000001;
