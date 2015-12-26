@@ -1253,7 +1253,7 @@ static void print_status(float a_pos, float a_v, float corr)
 
     // Audio time
     if (mpctx->sh_audio) {
-        saddf(line, &pos, width, "A:%6.1f ", a_pos);
+        saddf(line, &pos, width, "A:%8.3f ", a_pos);
         if (!sh_video) {
             float len = demuxer_get_time_length(mpctx->demuxer);
             saddf(line, &pos, width, "(");
@@ -1266,7 +1266,7 @@ static void print_status(float a_pos, float a_v, float corr)
 
     // Video time
     if (sh_video)
-        saddf(line, &pos, width, "V:%6.1f ", sh_video->pts);
+        saddf(line, &pos, width, "V:%8.3f ", sh_video->pts);
 
     // A-V sync
     if (mpctx->sh_audio && sh_video)
