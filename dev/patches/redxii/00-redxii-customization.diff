@@ -1,0 +1,180 @@
+Index: Makefile
+===================================================================
+--- Makefile	(revision 37564)
++++ Makefile	(working copy)
+@@ -661,6 +661,8 @@
+ OBJS_MPLAYER                  += $(addsuffix .o, $(basename $(SRCS_MPLAYER)))
+ OBJS_MPLAYER-$(PE_EXECUTABLE) += osdep/mplayer-rc.o
+ OBJS_MPLAYER                  += $(OBJS_MPLAYER-yes)
++OBJS_MENCODER-$(PE_EXECUTABLE) += osdep/mencoder-rc.o
++OBJS_MENCODER += $(OBJS_MENCODER-yes)
+ 
+ MENCODER_DEPS = $(OBJS_MENCODER) $(OBJS_COMMON) $(COMMON_LIBS)
+ MPLAYER_DEPS  = $(OBJS_MPLAYER)  $(OBJS_COMMON) $(COMMON_LIBS)
+@@ -763,6 +765,9 @@
+ check_checksums: $(MPLAYER_DEPS) $(MENCODER_DEPS) mplayer$(EXESUF) mencoder$(EXESUF)
+ 	md5sum -c checksums
+ 
++osdep/mencoder-rc.o: osdep/mplayer.rc version.h
++	$(WINDRES) -D IN_MENCODER -o $@ $<
++
+ # ./configure must be rerun if it changed
+ config.mak: configure
+ 	@echo "############################################################"
+Index: configure
+===================================================================
+--- configure	(revision 37564)
++++ configure	(working copy)
+@@ -1791,6 +1791,7 @@
+ if mingw32 ; then
+   _getch=getch2-win.c
+   shmem=yes
++  extra_cflags="-mno-ms-bitfields -D__USE_MINGW_ANSI_STDIO=1 $extra_cflags"
+ fi
+ 
+ if amigaos ; then
+Index: osdep/mplayer.exe.manifest
+===================================================================
+--- osdep/mplayer.exe.manifest	(revision 37564)
++++ osdep/mplayer.exe.manifest	(working copy)
+@@ -1,7 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+ <assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3">
+     <assemblyIdentity
+-        version="0.0.9.0"
++        version="1.2.0.0"
+         processorArchitecture="*"
+         name="MPlayer - The Movie Player"
+         type="win32"
+Index: osdep/mplayer.rc
+===================================================================
+--- osdep/mplayer.rc	(revision 37564)
++++ osdep/mplayer.rc	(working copy)
+@@ -19,38 +19,51 @@
+  */
+ 
+ #include <winver.h>
+-#include "version.h"
++#include "../version.h"
+ 
+-1 VERSIONINFO
+-FILEVERSION 0,0,9,0
+-PRODUCTVERSION 0,0,9,0
+-FILEOS VOS__WINDOWS32
+-FILETYPE VFT_APP
+-{
++#ifdef IN_MENCODER
++#define FILENAME "mencoder.exe"
++#define DESCRIPTION "MEncoder"
++#else
++#define FILENAME "mplayer.exe"
++#define DESCRIPTION "MPlayer - The Movie Player"
++#endif
++
++VS_VERSION_INFO VERSIONINFO
++FILEVERSION     1,2,0,0
++PRODUCTVERSION  1,2,0,0
++FILEOS          VOS__WINDOWS32
++FILETYPE        VFT_APP
++BEGIN
+     BLOCK "StringFileInfo"
+-    {
++    BEGIN
+         BLOCK "000004b0" // LANG_NEUTRAL,UNICODE_CP
+-        {
+-            VALUE "Comments","MPlayer is distributed under the terms of the GNU General Public License Version 2. Source code is available at http://www.mplayerhq.hu\000"
+-            VALUE "CompanyName", "\000"
+-            VALUE "FileDescription", "MPlayer - Movie Player\000"
+-            VALUE "FileVersion",VERSION
+-            VALUE "InternalName", "Counter Counter\000"
+-            VALUE "LegalCopyright", " (C) 2000-2015 MPlayer Team\000"
+-            //VALUE "LegalTrademarks"," \000";
+-            VALUE "OriginalFilename", "mplayer.exe\000"
+-            VALUE "ProductName", "MPlayer - The Movie Player\000"
+-            VALUE "ProductVersion",VERSION
+-            //VALUE "SpecialBuild","\000"
+-        }
+-    }
++        BEGIN
++            VALUE "Comments",           "MPlayer is distributed under the terms of the GNU General Public License Version 2. Source code is available at http://www.mplayerhq.hu"
++            VALUE "CompanyName",        "The MPlayer Project"
++            VALUE "FileDescription",    DESCRIPTION
++            VALUE "FileVersion",        VERSION
++            VALUE "InternalName",       "Counter Counter"
++            VALUE "LegalCopyright",     "(C) 2000-2015 MPlayer Team"
++            VALUE "OriginalFilename",   FILENAME
++            VALUE "ProductName",        DESCRIPTION
++            VALUE "ProductVersion",     VERSION
++            VALUE "SpecialBuild",       "http://mplayerwin.sf.net"
++        END
++    END
++
+     BLOCK "VarFileInfo"
+-    {
++    BEGIN
+         VALUE "Translation",0,0x04b0
+-    }
+-}
++    END
++END
+ 
+-IDI_ICON1 ICON DISCARDABLE  "etc/mplayer.ico"
++#ifdef IN_MENCODER
++IDI_ICON1   ICON   DISCARDABLE   "etc/mencoder.ico"
++#else
++IDI_ICON1   ICON   DISCARDABLE   "etc/mplayer.ico"
++IDI_ICON2   ICON   DISCARDABLE   "etc/mp_assoc.ico"
++#endif
+ 
+ // for some reason RT_MANIFEST does not work
+ 1 24 "mplayer.exe.manifest"
+Index: version.sh
+===================================================================
+--- version.sh	(revision 37564)
++++ version.sh	(working copy)
+@@ -12,19 +12,42 @@
+ test $svn_revision || svn_revision=$(LC_ALL=C svn info 2> /dev/null | grep Revision | cut -d' ' -f2)
+ test $svn_revision || svn_revision=$(grep revision .svn/entries 2>/dev/null | cut -d '"' -f2)
+ test $svn_revision || svn_revision=$(sed -n -e '/^dir$/{n;p;q;}' .svn/entries 2>/dev/null)
+-test $svn_revision && svn_revision=SVN-r$svn_revision
++test $svn_revision && svn_revision=Redxii-SVN-r$svn_revision
+ test $svn_revision || svn_revision=UNKNOWN
+ version=$svn_revision
+ fi
+ 
+-NEW_REVISION="#define VERSION \"${version}${extra}\""
++my_debug=$(cat config.h | grep "#define MP_DEBUG 1")
++if [ -n "$my_debug" ] ; then
++  my_debug=" debug"
++else
++  my_debug=
++fi
++
++# Get GCC Target
++# Best guess to determine 32-bit/64-bit
++my_gcctarget=$(LC_ALL=C gcc -v 2>&1 /dev/null | grep "Target:" | cut -d' ' -f2)
++
++if test "$my_gcctarget" = "i686-w64-mingw32" ; then
++  my_arch="(i686${my_debug})"
++elif test "$my_gcctarget" = "x86_64-w64-mingw32" ; then
++  my_arch="(x86_64${my_debug})"
++elif test "$my_gcctarget" = "mingw32" ; then
++  my_arch="(MinGW${my_debug})"
++fi
++
++NEW_REVISION="#define VERSION \"${version}${extra} ${my_arch}\""
+ OLD_REVISION=$(head -n 1 version.h 2> /dev/null)
+-TITLE='#define MP_TITLE "%s "VERSION" (C) 2000-2015 MPlayer Team\n"'
++BUILD_DATE="#define BUILD_DATE \"$(date "+%F %T %Z")\""
++TITLE='#define MP_TITLE "%s "VERSION" (C) 2000-2015 MPlayer Team\nFFmpeg version: "FFMPEG_VERSION"\nBuild date: "BUILD_DATE"\n"'
+ 
+ # Update version.h only on revision changes to avoid spurious rebuilds
+ if test "$NEW_REVISION" != "$OLD_REVISION"; then
+     cat <<EOF > version.h
++#include "dev/ffmpeg_version.h"
++
+ $NEW_REVISION
++$BUILD_DATE
+ $TITLE
+ EOF
+ fi

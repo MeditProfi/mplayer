@@ -1,0 +1,12 @@
+#! /bin/sh
+
+# Prevent locale nonsense from breaking basic text processing utilities
+export LC_ALL=C
+
+# Default options
+project_dir=/e/Buildsys/projects/mplayer
+svn_revision=$(cat ${project_dir}/packaging/pkg_version 2> /dev/null)
+
+mkdir ${project_dir}/packaging/releasebins/r${svn_revision}
+
+./build_mplayer --prefix=${project_dir}/packaging/releasebins/r${svn_revision} --build-mplayer-release --build-mplayer-debug --build-mencoder-release --build-mencoder-debug

@@ -1,0 +1,69 @@
+/*
+ * Windows resource file for MPlayer
+ *
+ * This file is part of MPlayer.
+ *
+ * MPlayer is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * MPlayer is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with MPlayer; if not, write to the Free Software Foundation, Inc.,
+ * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ */
+
+#include <winver.h>
+#include "../version.h"
+
+#ifdef IN_MENCODER
+#define FILENAME "mencoder.exe"
+#define DESCRIPTION "MEncoder"
+#else
+#define FILENAME "mplayer.exe"
+#define DESCRIPTION "MPlayer - The Movie Player"
+#endif
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION     1,2,0,0
+PRODUCTVERSION  1,2,0,0
+FILEOS          VOS__WINDOWS32
+FILETYPE        VFT_APP
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "000004b0" // LANG_NEUTRAL,UNICODE_CP
+        BEGIN
+            VALUE "Comments",           "MPlayer is distributed under the terms of the GNU General Public License Version 2. Source code is available at http://www.mplayerhq.hu"
+            VALUE "CompanyName",        "The MPlayer Project"
+            VALUE "FileDescription",    DESCRIPTION
+            VALUE "FileVersion",        VERSION
+            VALUE "InternalName",       "Counter Counter"
+            VALUE "LegalCopyright",     "(C) 2000-2015 MPlayer Team"
+            VALUE "OriginalFilename",   FILENAME
+            VALUE "ProductName",        DESCRIPTION
+            VALUE "ProductVersion",     VERSION
+            VALUE "SpecialBuild",       "http://mplayerwin.sf.net"
+        END
+    END
+
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation",0,0x04b0
+    END
+END
+
+#ifdef IN_MENCODER
+IDI_ICON1   ICON   DISCARDABLE   "etc/mencoder.ico"
+#else
+IDI_ICON1   ICON   DISCARDABLE   "etc/mplayer.ico"
+IDI_ICON2   ICON   DISCARDABLE   "etc/mp_assoc.ico"
+#endif
+
+// for some reason RT_MANIFEST does not work
+1 24 "mplayer.exe.manifest"

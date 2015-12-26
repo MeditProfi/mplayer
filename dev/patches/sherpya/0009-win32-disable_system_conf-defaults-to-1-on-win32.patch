@@ -1,0 +1,28 @@
+From 59652278db03c000b545a40dde712ee9b30dda1b Mon Sep 17 00:00:00 2001
+From: sherpya <sherpya@netfarm.it>
+Date: Thu, 14 Feb 2013 05:14:05 +0100
+Subject: [PATCH 09/28] win32: disable_system_conf defaults to 1 on win32
+
+---
+ mpcommon.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/mpcommon.c b/mpcommon.c
+index e774115..e8a0e7a 100644
+--- a/mpcommon.c
++++ b/mpcommon.c
+@@ -427,7 +427,11 @@ int select_video(demuxer_t* demuxer, int video_id)
+ }
+ 
+ /* Parse -noconfig common to both programs */
++#ifdef __MINGW32__
++int disable_system_conf=1;
++#else
+ int disable_system_conf=0;
++#endif
+ int disable_user_conf=0;
+ #ifdef CONFIG_GUI
+ int disable_gui_conf=0;
+-- 
+2.5.0
+

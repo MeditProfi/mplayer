@@ -1,0 +1,13 @@
+Index: configure
+===================================================================
+--- configure	(revision 37564)
++++ configure	(working copy)
+@@ -7418,6 +7418,8 @@
+   def_libvpx_lavc='#define CONFIG_LIBVPX 1'
+   libavdecoders="$libavdecoders LIBVPX_VP8_DECODER"
+   libavencoders="$libavencoders LIBVPX_VP8_ENCODER"
++  libavdecoders="$libavdecoders LIBVPX_VP9_DECODER"
++  libavencoders="$libavencoders LIBVPX_VP9_ENCODER"
+   codecmodules="libvpx $codecmodules"
+ else
+   def_libvpx_lavc='#define CONFIG_LIBVPX 0'

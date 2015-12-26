@@ -1,0 +1,24 @@
+Index: configure
+===================================================================
+--- configure	(revision 37564)
++++ configure	(working copy)
+@@ -2035,8 +2035,8 @@
+   def_local_aligned_8='#define HAVE_LOCAL_ALIGNED_8 1'
+   def_local_aligned_16='#define HAVE_LOCAL_ALIGNED_16 1'
+   def_local_aligned_32='#define HAVE_LOCAL_ALIGNED_32 1'
+-  iproc=486
+-  proc=i486
++  iproc=686
++  proc=i686
+ 
+ 
+   if test "$_runtime_cpudetection" = no ; then
+@@ -2237,7 +2237,7 @@
+   else # if test "$_runtime_cpudetection" = no
+     _mcpu="$cpuopt=generic"
+     # at least i486 required, for bswap instruction
+-    _march="-march=i486"
++    _march="-march=i686"
+     cflag_check $_mcpu || _mcpu="$cpuopt=i686"
+     cflag_check $_mcpu || _mcpu=""
+     cflag_check $_march $_mcpu || _march=""

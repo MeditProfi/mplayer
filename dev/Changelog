@@ -1,0 +1,1814 @@
+**(12-23-2015) - r37569**:
+
+  * Updated MPlayer to svn r37569
+  * Updated FFmpeg to git N-77455-g4707497
+
+  * External libraries:
+    * Updated libpng to 1.6.20
+    * Updated libopus to 1.1.1
+    * Git repositories:
+        * Updated libass to git cfa1a61
+        * Updated libvpx to git c84d3ab
+
+**(12-20-2015) - r37565**:
+
+  * Updated MPlayer to svn r37565
+  * Updated FFmpeg to git N-77403-g70f13ab
+
+  * External libraries:
+    * Git repositories:
+        * Updated libdvdcss to git a34ebf6
+        * Updated libvpx to git b597e3e
+
+**(12-13-2015) - r37563**:
+
+  * Updated MPlayer to svn r37563
+  * Updated FFmpeg to git N-77232-gac25d1d
+
+  * External libraries:
+    * Git repositories:
+        * Updated libbluray to git bd67132
+        * Updated libvpx to git e19b7df
+
+**(12-06-2015) - r37561-4**:
+
+  * Updated FFmpeg to git N-77069-gfcd9c63
+
+**(12-03-2015) - r37561-3**:
+
+  * Updated FFmpeg to git N-76995-g9ac5bea
+
+  * External libraries:
+    * Updated FreeType2 to 2.6.2
+    * Git repositories:
+        * Updated libass to git 0de70b3 (0.13.1)
+        * Updated libbluray to git ebde4c9 (0.9.2)
+        * Updated libvpx to git 623e988
+
+**(11-29-2015) - r37561-2**:
+
+  * Updated FFmpeg to git N-76946-g337b6d3
+
+**(11-26-2015) - r37561**:
+
+  * Updated MPlayer to svn r37561
+  * Updated FFmpeg to git N-76860-g72eaf72
+
+  * External libraries:
+    * Updated libgmp to 6.1.0
+
+**(11-25-2015) - r37559**:
+
+  * Updated MPlayer to svn r37559
+  * Updated FFmpeg to git N-76838-g29af74e
+
+  * External libraries:
+    * Updated GnuTLS to 3.4.7
+    * Git repositories:
+        * Updated libbluray to git ce39231
+        * Updated libvpx to git 610b413
+
+**(11-24-2015) - r37558**:
+
+  * Updated MPlayer to svn r37558
+  * Updated FFmpeg to git N-76822-g12a419d
+
+  * External libraries:
+    * Git repositories:
+        * Updated libbluray to git 9ddfb10
+        * Updated libvpx to git 16eba81
+
+**(11-19-2015) - r37557**:
+
+  * Updated MPlayer to svn r37557
+  * Updated FFmpeg to git N-76718-g50ce510
+
+  * External libraries:
+    * Updated libpng to 1.6.19
+    * Git repositories:
+        * Updated fontconfig to git 1d87fab
+        * Updated libbluray to git 1d36ee3
+        * Updated libvpx to git 8a782c7
+
+**(11-16-2015) - r37553**:
+
+  * Updated MPlayer to svn r37553
+  * Updated FFmpeg to git N-76684-g1fe82ab
+
+  * External libraries:
+    * Git repositories:
+        * Updated libbluray to git a788a42
+        * Updated libvpx to git 204cde5
+
+*(11-08-2015) - r37552**:
+
+  * Updated MPlayer to svn r37552
+  * Updated FFmpeg to git N-76524-g9ac61e7
+
+  * External libraries:
+    * Git repositories:
+        * Updated libass to git 99fd1f3
+        * Updated libbluray to git dcfd51e
+        * Updated libvpx to git 420e8d6
+
+**(10-28-2015) - r37551-2**:
+
+  * Updated FFmpeg to git N-76333-ga0e390e
+
+  * External libraries:
+    * Git repositories:
+        * Updated fontconfig to git d162a4a
+        * Updated libbluray to git ea300d2
+        * Updated libdvdcss to git 50a9209
+        * Updated libvpx to git dc9d36c
+
+Disabled libudfread (in libbluray) in 32-bit builds to restore XP (32-bit) compatibility (strtok_s/msvcrt.dll error). _mktemp_s in fontconfig will also be re-enabled for 64-bit builds. For 64-bit builds this brings the minimum OS to Vista 64-bit.
+
+**(10-25-2015) - r37551**:
+
+  * Updated MPlayer to svn r37551
+  * Updated FFmpeg to git N-76261-g6b5412c
+
+  * External libraries:
+    * Updated GnuTLS to 3.4.6
+    * Git repositories:
+        * Updated libilbc to git e762d0e
+        * Updated libvpx to git d162934
+
+**(10-18-2015) - r37548**:
+
+  * Updated MPlayer to svn r37548
+  * Updated FFmpeg to git N-76134-g32403d1
+
+  * External libraries:
+    * Updated FreeType2 to 2.6.1
+    * Git repositories:
+        * Updated fontconfig to git 6d6ce02
+        * Updated libass to git 43b1520
+        * Updated libdvdread to git 494311d
+        * Updated libvpx to git 7dd7a7d
+        * Updated x264 to git 7599210
+
+**(10-10-2015) - r37543**:
+
+  * Updated MPlayer to svn r37543
+  * Updated FFmpeg to git N-75899-gf3fc103
+
+  * External libraries:
+    * Git repositories:
+        * Updated libass to git 4778001
+        * Updated libbluray to git df059a9
+        * Updated libvpx to git 0c00af1
+
+**(09-29-2015) - r37527**:
+
+  * Updated MPlayer to svn r37527
+  * Updated FFmpeg to git N-75575-gb3066be
+
+  * External libraries:
+    * Git repositories:
+        * Updated libass to git 15380c9
+        * Updated libdvdread to git 54c4660
+        * Updated libvpx to git db2056f
+
+**(09-23-2015) - r37526**:
+
+  * Updated MPlayer to svn r37526
+  * Updated FFmpeg to git N-75487-g91b668a
+
+  * External libraries:
+    * Updated GnuTLS to 3.4.5
+    * Git repositories:
+        * Updated libass to git 32b2424
+        * Updated libbluray to git 8435163
+        * Updated libdvdread to git 5e2ffa4
+        * Updated libvpx to git 90a109f
+
+Fixes black screenshot & MPEG/DVD screenshot crash since r37451; disables FFmpeg's new swscale filter.
+
+**(09-10-2015) - r37520**:
+
+  * Updated MPlayer to svn r37520
+  * Updated FFmpeg to git N-75149-gbbc8fca (2.8.git)
+
+  * External libraries:
+    * Git repositories:
+        * Updated libass to git 448bc77
+
+**(09-07-2015) - r37493**:
+
+  * Updated MPlayer to svn r37493
+  * Updated FFmpeg to git N-75035-gb45ff13
+
+  * External libraries:
+    * Git repositories:
+        * Updated libdvdread to git 7247a19
+        * Updated libdvdnav to git 8a270d6
+        * Updated libvpx to git 536a909
+
+**(09-01-2015) - r37471**:
+
+  * Updated MPlayer to svn r37471
+  * Updated FFmpeg to git N-74752-g63fb5a6
+
+**(08-31-2015) - r37467**:
+
+  * Updated MPlayer to svn r37467
+  * Updated FFmpeg to git N-74737-g1acd631
+
+  * External libraries:
+    * Updated libcdio to 0.93
+    * Updated libcdio-paranoia to 10.2+0.93
+    * Updated xvid to 1.3.4
+    * Git repositories:
+        * Updated libvpx to git d565790
+
+**(08-23-2015) - r37451**:
+
+  * Updated MPlayer to svn r37451
+  * Updated FFmpeg to git N-74594-gb4d68e7
+
+  * External libraries:
+    * Updated fribidi to 0.19.7
+    * Updated GnuTLS to 3.4.4.1
+    * Git repositories:
+        * Updated ENCA to git 9728856
+        * Updated libvpx to git 41be09a
+        * Updated x264 to git e86f3a1
+
+**(08-16-2015) - r37448**:
+
+  * Updated MPlayer to svn r37448
+  * Updated FFmpeg to git N-74447-g767d780
+
+  * External libraries:
+    * Updated mpg123 to 1.22.4
+    * Git repositories:
+        * Updated libass to git 23de999
+        * Updated libbluray to git 75f2ac7
+        * Updated libvpx to git bbb9ca4
+
+  * Compiler changes: Updated GCC to 4.9.3
+
+**(08-04-2015) - r37444**:
+
+  * Updated MPlayer to svn r37444
+  * Updated FFmpeg to git N-74266-ge322b70
+
+**(08-01-2015) - r37440**:
+
+  * Updated MPlayer to svn r37440
+  * Updated FFmpeg to git N-74199-gb27d4fd
+
+  * External libraries:
+    * Updated libpng to 1.6.18
+    * Git repositories:
+        * Updated libass to git dc78d6a
+        * Updated libvpx to git c1b233d
+        * Updated x264 to git 73ae2d1
+
+**(07-27-2015) - r37437**:
+
+  * Updated MPlayer to svn r37437
+  * Updated FFmpeg to git N-74054-gb16b8c8
+
+**(07-24-2015) - r37434**:
+
+  * Updated MPlayer to svn r37434
+  * Updated FFmpeg to git N-73976-g5da90d7
+
+  * External libraries:
+    * Git repositories:
+        * Updated libvpx to git fd660f0
+
+**(07-18-2015) - r37432**:
+
+  * Updated MPlayer to svn r37432
+  * Updated FFmpeg to git N-73750-gf8e4d37
+
+**(07-17-2015) - r37428**:
+
+  * Updated MPlayer to svn r37428
+  * Updated FFmpeg to git N-73696-g8250943
+
+  * External libraries:
+    * Updated GnuTLS to 3.4.3
+    * Git repositories:
+        * Updated libvpx to git f83f9db
+
+  * Other changes:
+    * Updated MinGW-w64 to v4.
+
+**(07-14-2015) - r37426-2**:
+
+Fix MP4 crash. Reverts FFmpeg commit b5136612510052a7acacd560b9b5edad69402519 (avformat/utils: Skip ff_configure_buffers_for_index() for local files) (Mon, 13 Jul 2015 08:27:02 -0400).
+
+**(07-13-2015) - r37426**:
+
+  * Updated MPlayer to svn r37426
+  * Updated FFmpeg to git N-73632-g39a04eb
+
+  * External libraries:
+    * Git repositories:
+        * Updated libass to git d787615
+        * Updated libvpx to git db50037
+
+**(06-28-2015) - r37423**:
+
+  * Updated MPlayer to svn r37423
+  * Updated FFmpeg to git N-73243-gc78b82f
+
+  * External libraries:
+    * Git repositories:
+        * Updated fontconfig to git 46ec6a5
+        * Updated libass to git 38a175c
+        * Updated libbluray to git 84365f7
+        * Updated libvpx to git f3a1295
+
+**(06-14-2015) - r37420**:
+
+  * Updated MPlayer to svn r37420
+  * Updated FFmpeg to git N-72918-g4a3bc0d
+
+  * External libraries:
+    * Updated ENCA to 1.17-dev (9728856)
+    * Updated FreeType2 to 2.6.0
+    * Updated fontconfig to 2.11.94
+    * Git repositories:
+        * Updated libass to git 547850d
+        * Updated libvpx to git a4bb5f2
+
+**(06-07-2015) - r37414**:
+
+  * Updated MPlayer to svn r37414
+  * Updated FFmpeg to git N-72709-g42db4aa
+
+  * External libraries:
+    * Git repositories:
+        * Updated libbluray to git 3c43b55
+        * Updated libvpx to git a393826
+
+**(05-26-2015) - r37401**:
+
+  * Updated MPlayer to svn r37401
+  * Updated FFmpeg to git N-72351-g1b23654
+
+  * External libraries:
+    * Updated libmpg123 to 1.22.2
+    * Updated GnuTLS to 3.3.15
+    * Git repositories:
+        * Updated libass to git da32da6
+        * Updated libdvdread to git 46ef934
+        * Updated libbluray to git ec69764
+        * Updated libvpx to git 02fda65
+
+**(05-05-2015) - r37391**:
+
+  * Updated MPlayer to svn r37391
+  * Updated FFmpeg to git N-71900-g7f45f7f
+
+  * External libraries:
+    * Updated libmpg123 to 1.22.1
+    * Git repositories:
+        * Updated fontconfig to git 4a6f5ef
+        * Updated libdvdcss to git 41905a9
+        * Updated libdvdread to git 4e269e5
+        * Updated libbluray to git 7b9e926
+        * Updated libvpx to git b9a72d3
+
+**(04-12-2015) - r37386**:
+
+  * Updated MPlayer to svn r37386
+  * Updated FFmpeg to git N-71418-g818e889
+
+  * External libraries:
+    * Updated libpng to 1.6.17
+    * Git repositories:
+        * Updated fontconfig to git f6e6a8a
+        * Updated libbluray to git 37f9b71
+        * Updated libvpx to git 2f693be
+
+**(03-22-2015) - r37380**:
+
+  * Updated MPlayer to svn r37380
+  * Updated FFmpeg to git N-71042-g83020f8
+
+  * External libraries:
+    * Updated fontconfig to 2.11.93
+    * Updated libvorbis to 1.3.5
+    * Git repositories:
+        * Updated libass to git e020042
+        * Updated libbluray to git e014d45
+        * Updated libdvdread to git a76a31f
+        * Updated libvpx to git fef91c9
+        * Updated x264 to git 121396c
+
+**(03-01-2015) - r37378**:
+
+  * Updated MPlayer to svn r37378
+  * Updated FFmpeg to git N-70351-g2b40416
+
+  * External libraries:
+    * Updated GnuTLS to 3.3.12
+    * Git repositories:
+        * Updated libass to git 51a93b5
+        * Updated libbluray to git 3e770a7
+        * Updated libdvdcss to git bf669a8
+        * Updated libvpx to git f4e0eb1
+
+**(02-08-2015) - r37370**:
+
+  * Updated MPlayer to svn r37370
+  * Updated FFmpeg to git N-69658-g03cecf4
+
+  * External libraries:
+    * Updated giflib to 5.1.1
+    * Updated lzo to 2.09
+    * Updated speex to 1.2rc2
+    * Git repositories:
+        * Updated libass to git 82a5bb2
+        * Updated libdvdcss to git ec7c3a5
+        * Updated libdvdread to git af446d4
+        * Updated libdvdnav to git 5fb9197
+        * Updated libvpx to git 67b61c7
+
+**(01-25-2015) - r37363**:
+
+  * Updated MPlayer to svn r37363
+  * Updated FFmpeg to git N-69258-gf994000
+
+  * External libraries:
+    * Updated fontconfig to 2.11.92
+    * Git repositories:
+        * Updated libass to git 1c4459b
+        * Updated libdvdread to git f5ea914
+        * Updated libdvdnav to git 1cdbd69
+        * Updated libvpx to git 643c75d
+
+**(01-11-2015) - r37353**:
+
+  * Updated MPlayer to svn r37353
+  * Updated FFmpeg to git N-69011-g6abf00d
+
+  * External libraries:
+    * Updated FreeType2 to 2.5.5
+    * Updated libpng to 1.6.16
+    * Git repositories:
+        * Updated fontconfig to git 4c60fabf6617a8954e46bdaeccc95667375fa159
+        * Updated libass to git ad0505d
+        * Updated libbluray to git 203bdaa
+        * Updated libvpx to git ccffe31
+
+**(12-25-2014) - r37343**:
+
+  * Updated MPlayer to svn r37343
+  * Updated FFmpeg to git N-68680-g0c0168a
+
+  * External libraries:
+    * Git repositories:
+        * Reverted libdvdcss to git 275fdb5
+
+  Identified an issue playing DVDs directly from disk since r37324-2,
+  reverted libdvdcss to last known good version (git 275fdb5bb53c5aad402036ffa9744ad6bca9f13f).
+
+**(12-23-2014) - r37342**:
+
+  * Updated MPlayer to svn r37342
+  * Updated FFmpeg to git N-68653-g32c836c
+
+  * External libraries:
+    * Updated GnuTLS to 3.3.11
+    * Git repositories:
+        * Updated libbluray to git 8824319
+        * Updated libvpx to git 3d94b9b
+        * Updated x264 to git 40bb568
+
+**(12-06-2014) - r37337**:
+
+  * Updated MPlayer to svn r37337
+  * Updated FFmpeg to git N-68271-geb74839
+
+  * External libraries:
+    * Git repositories:
+        * Updated libass to git 507ae26
+        * Updated libbluray to git 6328d62
+        * Updated libdvdcss to git d1f3068
+        * Updated libdvdread to git 72f8786
+        * Updated libdvdnav to git feb09c3
+        * Updated libvpx to git da464c4
+
+  Undo revert of r37309. Bug is fixed upstream.
+
+**(11-24-2014) - r37328-2**:
+
+  Removed open-fonts. No other changes.
+
+**(11-23-2014) - r37328**:
+
+  * Updated MPlayer to svn r37328
+  * Updated FFmpeg to git N-67926-g4e9745f
+
+  * External libraries:
+    * Updated libpng to 1.6.15
+    * Git repositories:
+        * Updated libass to git 8d70dbe
+        * Updated libbluray to git cc456e4
+        * Updated libdvdcss to git 1c2da8e
+        * Updated libvpx to git dfdfb2d
+
+  This reverts upstream commit r37309 due to subtitle loading
+  bug when '-subcp enca' is used.
+
+**(11-16-2014) - r37325**:
+
+  * Updated MPlayer to svn r37325
+  * Updated FFmpeg to git N-67742-g3f07dd6
+
+  * External libraries:
+    * Git repositories:
+        * Updated libass to git 65207f1
+        * Updated libdvdcss to git 1b4e3f9
+
+**(11-12-2014) - r37324-2**:
+
+  * Updated FFmpeg to git N-67574-g9d6ad68
+
+  * External libraries:
+    * Git repositories:
+        * Updated libdvdcss to git 275fdb5
+        * Updated libbluray to git 97bb529
+        * Updated libvpx to git c7a905c
+
+  * Compiler changes: Updated GCC to 4.9.2
+
+  * Other changes: libdvdcss key caching is disabled in this build.
+
+**(11-09-2014) - r37324**:
+
+  * Updated MPlayer to svn r37324
+  * Updated FFmpeg to git N-67479-gf9fa560
+
+  * External libraries:
+    * Update ENCA to 1.16
+    * Update libpng to 1.6.14
+    * Removed libmng
+    * Git repositories:
+        * Updated fontconfig to git b732bf057f4b3ec3bac539803005e9c42d056b2a
+        * Updated libass to git a31ea56
+        * Updated libdvdcss to git 4fb069e
+        * Updated libdvdread to git 3dbbdfb
+        * Updated libdvdnav to git feb09c3
+        * Updated libbluray to git 094eb2f
+        * Updated libvpx to git d8362a3
+
+**(10-26-2014) - r37313**:
+
+  * Updated MPlayer to svn r37313
+  * Updated FFmpeg to git N-67197-gabaa41b
+
+  * External libraries:
+	* Git repositories:
+        * Updated libdvdcss to git 586bb80
+        * Updated libdvdread to git 4d5cb54
+        * Updated libbluray to git 0ab06e5
+        * Updated libvpx to git ac53c41
+
+**(10-18-2014) - r37294**:
+
+  * Updated MPlayer to svn r37294
+  * Updated FFmpeg to git N-66972-g7891b4f
+
+  * External libraries:
+    * Added GnuTLS 3.3.9 (libnettle 2.7.1, libgmp 6.0.0)
+	* Updated libmpg123 to 1.21.0
+	* Removed liba52
+	* Git repositories:
+        * Updated libass to git 210d3ea
+        * Updated libvpx to git 6f77bff
+
+  HTTPS urls are now supported via ffmpeg://
+
+**(10-12-2014) - r37293**:
+
+  * Updated MPlayer to svn r37293
+  * Updated FFmpeg to git N-66809-g20df026
+
+  * External libraries:
+	* Git repositories:
+        * Updated fontconfig to git e7121de237a1873c3241a5b8451e7d00a3d41524
+        * Updated libvpx to git a90255c
+
+**(10-04-2014) - r37292**:
+
+  * Updated MPlayer to svn r37292
+  * Updated FFmpeg to git N-66604-gdf8394c
+
+  * External libraries:
+	* Git repositories:
+        * Updated libdvdread to git 7118002
+        * Updated libvpx to git c9561d5
+
+**(09-29-2014) - r37291**:
+
+  * Updated MPlayer to svn r37291
+  * Updated FFmpeg to git N-66532-g3f5095f
+
+**(09-28-2014) - r37289**:
+
+  * Updated MPlayer to svn r37289
+  * Updated FFmpeg to git N-66523-g3956b12
+
+  * External libraries:
+	* Git repositories:
+        * Updated libbluray to git 3534005
+        * Updated libvpx to git d4713f1
+
+**(09-14-2014) - r37278**:
+
+  * Updated MPlayer to svn r37278
+  * Updated FFmpeg to git N-66276-g04b0dda
+
+  * External libraries:
+	* Git repositories:
+        * Updated libass to git cad1cae
+        * Updated libvpx to git 95f67f0
+
+**(09-07-2014) - r37268**:
+
+  * Updated MPlayer to svn r37268
+  * Updated FFmpeg to git N-66170-gab84eff
+
+**(09-06-2014) - r37266**:
+
+  * Updated MPlayer to svn r37266
+  * Updated FFmpeg to git N-66154-g1654ca7
+
+  * External libraries:
+    * Updated libbluray to 0.6.2
+	* Git repositories:
+        * Updated libass to git ca24d7a
+        * Updated libdvdread to git cb1ae87
+        * Updated libdvdnav to git f90fa9e
+        * Updated libvpx to git 89963bf
+
+**(08-31-2014) - r37260**:
+
+  * Updated MPlayer to svn r37260
+  * Updated FFmpeg to git N-65992-ge023720
+
+  * External libraries:
+	* Git repositories:
+        * Updated libdvdread to git 70d25de
+        * Updated libdvdnav to git 2d73a2b
+        * Updated libvpx to git 4ab2241
+
+**(08-29-2014) - r37259**:
+
+  * Updated MPlayer to svn r37259
+  * Updated FFmpeg to git N-65971-g4c92047
+
+  * External libraries:
+	* Git repositories:
+        * Updated libass to git 8a5830a
+        * Updated libdvdread to git aa3659d
+        * Updated libdvdnav to git 874873d
+        * Updated libvpx to git c29cc89
+        * Updated x264 to git dd79a61
+
+**(08-24-2014) - r37257**:
+
+  * Updated MPlayer to svn r37257
+  * Updated FFmpeg to git N-65860-g1aa153d
+
+  * External libraries:
+    * Updated libpng to 1.6.13
+	* Git repositories:
+        * Updated libass to git 099f7fd
+        * Updated libbluray to git 3ef62e0
+        * Updated libdvdnav to git 79354a0
+        * Updated libvpx to git 79bb2cd
+
+**(08-15-2014) - r37251**:
+
+  * Updated MPlayer to svn r37251
+  * Updated FFmpeg to git N-65651-gd3a2249
+
+  * External libraries:
+	* Git repositories:
+        * Updated libdvdnav to git 7c10f22
+        * Updated libvpx to git 2bfbe9a
+
+**(08-10-2014) - r37250**:
+
+  * Updated MPlayer to svn r37250
+  * Updated FFmpeg to git N-65504-g3539d6c
+
+  * External libraries:
+    * Updated libbluray to 0.6.1
+	* Git repositories:
+        * Updated libdvdcss to git b7967b9
+        * Updated libdvdread to git 620e546
+        * Updated libdvdnav to git 866b12e
+        * Updated libvpx to git 93ef0e0
+
+**(07-27-2014) - r37242**:
+
+  * Updated MPlayer to svn r37242
+  * Updated FFmpeg to git N-65026-g36284ae
+
+  * External libraries:
+	* Git repositories:
+        * Updated libbluray to git 7a28187
+        * Updated libvpx to git ac1f061
+
+**(07-15-2014) - r37239**:
+
+  * Updated MPlayer to svn r37239
+  * Updated FFmpeg to git N-64667-gd595361
+
+  * External libraries:
+	* Git repositories:
+        * Updated libvpx to git f349b07
+
+**(07-05-2014) - r37232**:
+
+  * Updated MPlayer to svn r37232
+  * Updated FFmpeg to git N-64439-gbaef3ba
+
+  * External libraries:
+    * Updated liblzo2 to 2.08
+	* Git repositories:
+        * Updated libbluray to git 63d66e8
+        * Updated libvpx to git 3643544
+
+**(06-28-2014) - r37229**:
+
+  * Updated MPlayer to svn r37229
+  * Updated FFmpeg to git N-64279-g5bca5f8
+
+  * External libraries:
+    * Updated libmpg123 to 1.20.1
+	* Git repositories:
+        * Updated libbluray to git f975d5e
+        * Updated libvpx to git 715b8d3
+
+**(06-14-2014) - r37225**:
+
+  * Updated MPlayer to svn r37225
+  * Updated FFmpeg to git N-63948-g6b9685d
+
+  * External libraries:
+    * Updated libmpg123 to 1.20.0
+    * Updated libpng to 1.6.12
+	* Git repositories:
+    	* Updated libass to git acf32f4
+        * Updated libdvdcss to git e6b4e1a
+        * Updated libdvdread to git 59332a2
+        * Updated libdvdnav to git bf53a44
+        * Updated libvpx to git 95fb900
+        * Updated x264 to git a5831aa
+
+**(06-01-2014) - r37216**:
+
+  * Updated MPlayer to svn r37216
+  * Updated FFmpeg to git N-63644-ge1bd40f
+
+  * External libraries:
+    * Updated libbluray to 0.6.0
+    * Updated libogg to 1.3.2
+    * Git repositories:
+        * Updated libass to git 18f02cb
+        * Updated libvpx to git 5132e6d
+
+**(05-19-2014) - r37205**:
+
+  * Updated MPlayer to svn r37205
+  * Updated FFmpeg to git N-63282-g4a30f08
+
+  * External libraries:
+    * Updated giflib to 5.1.0
+    * Updated libcaca to 0.99beta19
+    * Git repositories:
+        * Updated libdvdread to git 6733be2
+        * Updated libvpx to git b043c3e
+
+**(05-17-2014) - r37203**:
+
+  * Updated MPlayer to svn r37203
+  * Updated FFmpeg to git N-63204-gaedc1c2
+
+  * External libraries:
+    * Git repositories:
+        * Updated libass to git 2c7fc01
+        * Updated libdvdread to git 15a8100
+        * Updated libbluray to git 237dd22
+        * Updated libvpx to git ed83c2a
+
+**(05-04-2014) - r37183**:
+
+  * Updated MPlayer to svn r37183
+  * Updated FFmpeg to git N-62950-gc25b0b7
+
+  * External libraries:
+    * Git repositories:
+        * Updated libbluray to git d50f78b
+        * Updated libdvdread to git 0cd997a
+        * Updated libdvdnav to git f5f8701
+        * Updated libass to git 35d06db
+        * Updated libvpx to git 140262d
+        * Updated x264 to git ac76440
+
+**(04-19-2014) - r37153**:
+
+  * Updated MPlayer to svn r37153
+  * Updated FFmpeg to git N-62542-gf45a840
+
+  * External libraries:
+    * Updated giflib to 5.0.6
+    * Updated xvid to 1.3.3
+    * Git repositories:
+        * Updated libdvdcss to git fbef64e
+        * Updated libdvdread to git 0538a5d (4.9.9)
+        * Updated libdvdnav to git d58950e
+        * Updated libass to git 23b30fd
+        * Updated libvpx to git 6962ea6
+
+**(04-08-2014) - r37144**:
+
+  * Updated MPlayer to svn r37144
+  * Updated FFmpeg to git N-62259-gb176320
+
+  * External libraries:
+    * Updated fontconfig to 2.11.1
+    * Updated libmpg123 to 1.19.0
+    * Git repositories:
+        * Updated libass to git d8fc873
+        * Updated libvpx to git b03e775
+        * Updated x264 to git d6b4e63
+
+**(03-24-2014) - r37051**:
+
+  * Updated MPlayer to svn r37051
+  * Updated FFmpeg to git N-61755-gc9c0451
+
+  * External libraries:
+    * Git repositories:
+        * Updated libass to git 29cd736
+        * Updated libvpx to git 9895c9d
+
+**(03-09-2014) - r36986**:
+
+  * Updated MPlayer to svn r36986
+  * Updated FFmpeg to git N-61191-gea9399f
+
+  * External libraries:
+    * Git repositories:
+        * Updated libvpx to git 3facd6c
+
+**(03-07-2014) - r36981**:
+
+  * Updated MPlayer to svn r36981
+  * Updated FFmpeg to git N-61155-g61ff043
+
+  * External libraries:
+    * Updated FreeType2 to 2.5.3
+    * Updated libpng to 1.6.10
+    * Updated winpthreads (svn)
+    * Git repositories:
+        * Updated libass to git 9870769
+        * Updated libvpx to git ee77a1a
+        * Updated internal libdvdread to VideoLAN libdvdread git 7c743650d0
+
+**(02-28-2014) - r36952**:
+
+  * Updated MPlayer to svn r36952
+  * Updated FFmpeg to git N-60959-g669043d
+
+  * External libraries:
+    * Updated libass to git 363cd08
+    * Updated libvpx to git df008f6
+    * Updated internal libdvdread to VideoLAN libdvdread git 2a5060b
+
+**(02-26-2014) - r36945**:
+
+  * Updated MPlayer to svn r36945
+  * Updated FFmpeg to git N-60912-g96fc290
+
+  * External libraries:
+    * Updated libvpx to git 0eca2cd
+
+**(02-23-2014) - r36900**:
+
+  * Updated MPlayer to svn r36900
+  * Updated FFmpeg to git N-60837-g02b6324
+
+  * External libraries:
+    * Updated libvpx to git 4b3e44f
+
+**(02-20-2014) - r36896**:
+
+  * Updated MPlayer to svn r36896
+  * Updated FFmpeg to git N-60762-g3edc3b1
+
+  * External libraries:
+    * Updated libmpg123 to 1.18.1
+    * Updated libvpx to git fdb2337
+
+**(02-09-2014) - r36816**:
+
+  * Updated MPlayer to svn r36816
+  * Updated FFmpeg to git N-60456-g4040b56
+
+  * External libraries:
+    * Updated libvpx to git 7c8a666
+
+**(02-08-2014) - r36810**:
+
+  * Updated MPlayer to svn r36810
+  * Updated FFmpeg to git N-60422-g958d98c
+
+  * External libraries:
+    * Updated libpng to 1.6.9
+    * Updated libvpx to git e876cf3
+
+**(02-01-2014) - r36772**:
+
+  * Updated MPlayer to svn r36772
+  * Updated FFmpeg to git N-60274-gdce9321
+
+  * External libraries:
+    * Updated libass to git 5566069
+    * Updated libmpg123 to 1.18
+    * Updated libvpx to git 37e5325
+    * Updated libvorbis to 1.3.4
+
+**(01-25-2014) - r36739**:
+
+  * Updated MPlayer to svn r36739
+  * Updated FFmpeg to git N-60186-gc46faac
+
+  * External libraries:
+    * Updated libass to git d87fd62
+    * Updated libvpx to git cacea00
+    * Updated x264 to git 956c8d8
+
+**(01-20-2014) - r36656**:
+
+  * Updated MPlayer to svn r36656
+  * Updated FFmpeg to git N-59995-g4014b40
+
+  * External libraries:
+    * Updated libjpeg to 9a
+
+**(01-19-2014) - r36621**:
+
+  * Updated MPlayer to svn r36621
+  * Updated FFmpeg to git N-59967-g676a395
+
+  * External libraries:
+    * Updated libass to git b08d329
+    * Updated libvpx to git 9c8b74f
+
+**(01-11-2014) - r36573**:
+
+  * Updated MPlayer to svn r36573
+  * Updated FFmpeg to git N-59779-gb00a8b4
+
+  * External libraries:
+    * Updated libtheora to 1.2.0alpha1
+    * Updated libvpx to git f83c12b
+    * Updated internal libdvdread to VideoLAN libdvdread git a2f211a (5.0.0)
+
+**(01-07-2014) - r36572**:
+
+  * Updated MPlayer to svn r36572
+  * Updated FFmpeg to git N-59660-g8aead3f
+
+**(01-04-2014) - r36568**:
+
+  * Updated MPlayer to svn r36568
+  * Updated FFmpeg to git N-59565-g70937d9
+
+  * External libraries:
+    * Added twolame 0.3.13
+    * Updated libvpx to git 2344e3a
+
+  * Other changes:
+    * Updated build environment to GCC 4.8.2 and MinGW-w64 v3.
+
+**(01-01-2014) - r36563**:
+
+  * Updated MPlayer to svn r36563
+  * Updated FFmpeg to git N-59466-g07728a1
+
+  * External libraries:
+    * Updated libmpg123 to 1.17
+    * Updated libvpx to git cdc933c
+
+**(12-25-2013) - r36558-2**:
+
+  * Updated FFmpeg to git N-59369-g165f96c
+
+**(12-23-2013) - r36558**:
+
+  * Updated MPlayer to svn r36558
+  * Updated FFmpeg to git N-59311-g95953c1
+
+  * External libraries:
+    * Updated libbluray to 0.5.0
+    * Updated libvpx to git 87440ae
+
+**(12-20-2013) - r36557-2**:
+
+  * Updated FFmpeg to git N-59262-g70d6ce7
+
+  * External libraries:
+    * Updated libpng to 1.6.8
+    * Updated libbluray to git 42aa923
+    * Updated libvpx to git f69b560
+
+**(12-19-2013) - r36557**:
+
+  * Updated MPlayer to svn r36557
+  * Updated FFmpeg to git N-59209-gf5d0398
+
+  * External libraries:
+    * Updated libass to git de3f0e7
+    * Updated libbluray to git adc544a
+    * Updated libvpx to git 949194d
+
+**(12-15-2013) - r36545**:
+
+  * Updated MPlayer to svn r36545
+  * Updated FFmpeg to git N-59114-gcc0e2ba
+
+  * External libraries:
+    * Updated libbluray to git fc45ef6
+    * Updated libvpx to git c5aaf92
+
+**(12-13-2013) - r36544**:
+
+  * Updated MPlayer to svn r36544
+  * Updated FFmpeg to git N-59047-g0f02ea0
+
+  * External libraries:
+    * Updated libbluray to git fde1f88
+    * Updated libvpx to git c263418
+
+**(12-12-2013) - r36543**:
+
+  * Updated MPlayer to svn r36543
+  * Updated FFmpeg to git N-59017-g551a679
+
+  * External libraries:
+    * Updated FreeType2 to 2.5.2
+    * Updated libbluray to git 792bc0b
+    * Updated libvpx to git 2a6c7a1
+
+**(12-10-2013) - r36541**:
+
+  * Updated MPlayer to svn r36541
+  * Updated FFmpeg to git N-58950-g8e5a298
+
+  * External libraries:
+    * Updated FriBiDi to 0.19.6
+    * Updated libbluray to git ea08af6
+    * Updated libvpx to git d2dad31
+
+**(12-08-2013) - r36536**:
+
+  * Updated MPlayer to svn r36536
+  * Updated FFmpeg to git N-58869-gae33007
+
+  * External libraries:
+    * Updated libopus to 1.1
+    * Updated libvpx to git a19d694
+
+**(12-05-2013) - r36533-2**:
+
+  * Updated FFmpeg to git N-58748-gbe99054
+
+  * External libraries:
+    * Updated libvpx to git a112353
+    * Reverted FreeType2 to 2.5.0.1
+
+  Fixed font scanning crash.
+
+**(12-03-2013) - r36533**:
+
+  * Updated MPlayer to svn r36533
+  * Updated FFmpeg to git N-58723-g0cc5011
+
+  * External libraries:
+    * Updated libbluray to git 0c83ca6
+
+**(11-30-2013) - r36526**:
+
+  * Updated MPlayer to svn r36526
+  * Updated FFmpeg to git N-58656-gbd9de4f
+
+  * External libraries:
+    * Updated libbluray to git 3a13579
+    * Updated libvpx to git e924057
+
+**(11-27-2013) - r36521-2**:
+
+  * Updated FFmpeg to git N-58485-ga12b4bd
+
+  * External libraries:
+    * Updated FreeType2 to 2.5.1
+    * Updated libass to git 1373b67
+    * Updated libbluray to git 4edc4dd
+    * Updated libvpx to git b60293e
+
+**(11-24-2013) - r36521**:
+
+  * Updated MPlayer to svn r36521
+  * Updated FFmpeg to git N-58429-gccdfa3e
+
+**(11-23-2013) - r36520**:
+
+  * Updated MPlayer to svn r36520
+  * Updated FFmpeg to git N-58401-gffe31c6
+
+  * External libraries:
+    * Updated libvpx to git 520aa70
+
+**(11-17-2013) - r36516**:
+
+  * Updated MPlayer to svn r36516
+  * Updated FFmpeg to git N-58239-ga8dec36
+
+  * External libraries:
+    * Updated libvpx to git 5ae4ba5
+
+**(11-16-2013) - r36508**:
+
+  * Updated MPlayer to svn r36508
+  * Updated FFmpeg to git N-58119-gd04b7de
+
+  * External libraries:
+    * Updated libpng to 1.6.7
+    * Updated libvpx to git 7fb5e73
+
+**(11-10-2013) - r36505**:
+
+  * Updated MPlayer to svn r36505
+  * Updated FFmpeg to git N-57999-g3853fcd
+
+  * External libraries:
+    * Updated libvpx to git af2559c
+
+**(11-02-2013) - r36500**:
+
+  * Updated MPlayer to svn r36500
+  * Updated FFmpeg to git N-57784-g647adc4
+
+  * External libraries:
+    * Updated libvpx to git 333345c
+    * Updated x264 to git 1ca7bb9
+
+**(10-28-2013) - r36496**:
+
+  * Updated MPlayer to svn r36496
+  * Updated FFmpeg to git N-57505-g0fef19b
+
+  * External libraries:
+    * Updated libvpx to git b133cbf
+
+**(10-26-2013) - r36487**:
+
+  * Updated MPlayer to svn r36487
+  * Updated FFmpeg to git N-57430-g7e19c54
+
+  * External libraries:
+    * Updated libass to git 516f0ea
+    * Updated libvpx to git 39b6ab6
+
+**(10-19-2013) - r36479**:
+
+  * Updated MPlayer to svn r36479
+  * Updated FFmpeg to git N-57248-g12e66f2
+
+**(10-18-2013) - r36475**:
+
+  * Updated MPlayer to svn r36475
+  * Updated FFmpeg to git N-57235-g0bf8580
+
+  * External libraries:
+    * Updated libass to git dacfe5e
+    * Updated libvpx to git dd54f0b
+
+**(10-12-2013) - r36463**:
+
+  * Updated MPlayer to svn r36463
+  * Updated FFmpeg to git N-57060-ge4d4567
+
+  * External libraries:
+    * Updated ENCA to 1.15
+    * Updated fontconfig to 2.11.0
+    * Updated libass to git 71ab600
+    * Updated libmpg123 to 1.16
+    * Updated libvpx to git 1ea04d9
+
+  rtmpdump/librtmp is dropped from this release.
+  Standalone builds can be found at:
+  http://ffmpeg.zeranoe.com/forum
+
+**(10-05-2013) - r36461**:
+
+  * Updated MPlayer to svn r36461
+  * Updated FFmpeg to git N-56896-ga927276
+
+  * External libraries:
+    * Updated libvpx to git b03d3da
+
+**(09-27-2013) - r36459**:
+
+  * Updated MPlayer to svn r36459
+  * Updated FFmpeg to git N-56704-g3e0c78b
+
+  * External libraries:
+    * Updated libass to git bc0cfcc
+
+**(09-22-2013) - r36458**:
+
+  * Updated MPlayer to svn r36458
+  * Updated FFmpeg to git N-56569-g283fb76
+
+**(09-22-2013) - r36455**:
+
+  * Updated MPlayer to svn r36455
+  * Updated FFmpeg to git N-56554-ge07ac72
+
+  * External libraries:
+    * Updated libbluray to 0.4.0
+    * Updated libpng to 1.6.6
+
+**(09-14-2013) - r36444**:
+
+  * Updated MPlayer to svn r36444
+  * Updated FFmpeg to git N-56276-gf2afe96
+
+**(09-07-2013) - r36442**:
+
+  * Updated MPlayer to svn r36442
+  * Updated FFmpeg to git N-56087-g64c54f8
+
+  * External libraries:
+    * Updated fontconfig to 2.10.95
+    * Updated giflib to 5.0.5
+    * Updated polarssl to 1.2.8
+    * Updated rtmpdump to git 5ba573a
+
+**(09-01-2013) - r36437**:
+
+  * Updated MPlayer to svn r36437
+  * Updated FFmpeg to git N-55960-gb339dcc
+
+**(08-29-2013) - r36433**:
+
+  * Updated MPlayer to svn r36433
+  * Updated FFmpeg to git N-55837-gf3ace37
+
+  * External libraries:
+    * Updated x264 to git 9e941d1
+
+**(08-23-2013) - r36428**:
+
+  * Updated MPlayer to svn r36428
+  * Updated FFmpeg to git N-55724-g16a0d75
+
+**(08-17-2013) - r36426**:
+
+  * Updated MPlayer to svn r36426
+  * Updated FFmpeg to git N-55607-g2c1a215
+
+**(08-14-2013) - r36422**:
+
+  * Updated MPlayer to svn r36422
+  * Updated FFmpeg to git N-55517-g640a36a
+
+**(08-11-2013) - r36418**:
+
+  * Updated MPlayer to svn r36418
+  * Updated FFmpeg to git N-55474-ga5ef796
+
+  * External libraries:
+    * Added libbs2b 3.1.0
+
+**(08-10-2013) - r36413**:
+
+  * Updated MPlayer to svn r36413
+
+**(08-06-2013) - r36406**:
+
+  * Updated MPlayer to svn r36406
+
+**(08-05-2013) - r36401**:
+
+  * Updated MPlayer to svn r36401
+  * Updated FFmpeg to git N-55226-gc4f9a4c
+
+  * External libraries:
+    * Syncd internal libdvdread to VideoLAN libdvdread git 6005034
+
+**(08-03-2013) - r36396**:
+
+  * Updated MPlayer to svn r36396
+  * Updated FFmpeg to git N-55218-g61af627
+
+**(07-31-2013) - r36380**:
+
+  * Updated MPlayer to svn r36380
+  * Updated FFmpeg to git N-55113-g38536e5
+
+**(07-29-2013) - r36370**:
+
+  * Updated MPlayer to svn r36370
+  * Updated FFmpeg to git N-55025-g19da86f
+
+  * External libraries:
+    * Replaced libregif 4.1.7 with giflib 5.0.4
+
+**(07-27-2013) - r36366**:
+
+  * Updated MPlayer to svn r36366
+  * Updated FFmpeg to git N-54962-g8720d3a
+
+  * External libraries:
+    * Updated libass to git a1e725d
+
+**(07-18-2013) - r36364**:
+
+  * Updated MPlayer to svn r36364
+  * Updated FFmpeg to git N-54790-g1816f55
+
+  * External libraries:
+    * Updated libopus to 1.0.3
+
+**(07-11-2013) - r36356**:
+
+  * Updated MPlayer to svn r36356
+  * Updated FFmpeg to git N-54660-g38ce775
+
+  * External libraries:
+    * Updated libass to git 38fb0b8
+
+**(07-06-2013) - r36353**:
+
+  * Updated MPlayer to svn r36353
+  * Updated FFmpeg to git N-54492-g68b7b53
+
+
+  * External libraries:
+    * Updated x264 to git f0c1c53
+
+**(07-04-2013) - r36350-2**:
+
+  * Updated FFmpeg to git N-54439-g565140d
+
+  * External Libraries:
+    * Updated FreeType2 to 2.5.0.1
+
+Initial 64-bit release.
+
+**(06-24-2013) - r36350**:
+
+  * Updated MPlayer to svn r36350
+  * Updated FFmpeg to git N-54152-g730e07f
+
+  * External Libraries:
+    * Updated libass to git 05cd0bc
+
+**(06-18-2013) - r36349**:
+
+  * Updated MPlayer to svn r36349
+  * Updated FFmpeg to git N-54097-g9626d0e
+
+Adds a patch by sherpya to load subtitles with unicode filenames.
+
+**(06-16-2013) - r36348**:
+
+  * Updated MPlayer to svn r36348
+  * Updated FFmpeg to git N-54082-g96b33dd
+
+**(06-14-2013) - r36345**:
+
+  * Updated MPlayer to svn r36345
+  * Updated FFmpeg to git N-54023-g6fe419b
+
+**(06-07-2013) - r36305**:
+
+  * Updated MPlayer to svn r36305
+  * Updated FFmpeg to git N-53904-g56abad0
+
+**(06-03-2013) - r36298**:
+
+  * Updated MPlayer to svn r36298
+  * Updated FFmpeg to git N-53818-gfca435f
+
+**(05-31-2013) - r36293**:
+
+  * Updated MPlayer to svn r36293
+  * Updated FFmpeg to git N-53724-g716dbc7
+
+  * External libraries:
+    * Updated libogg to 1.3.1
+
+**(05-25-2013) - r36281**:
+
+  * Updated MPlayer to svn r36281
+  * Updated FFmpeg to git N-53430-g2c2e69b
+
+  * External libraries:
+    * Updated libmpg123 to 1.15.4
+    * Updated x264 to git a3ac64b
+
+**(05-20-2013) - r36279**:
+
+  * Updated MPlayer to svn r36279
+  * Updated FFmpeg to git N-53284-gd0a34ae
+
+**(05-17-2013) - r36275**:
+
+  * Updated MPlayer to svn r36275
+  * Updated FFmpeg to git N-53170-g17989dc
+
+  * External libraries:
+    * Updated libass to git b634305
+
+**(05-11-2013) - r36265**:
+
+  * Updated MPlayer to svn r36265
+  * Updated FFmpeg to git N-52985-gcbcc5cb
+
+  * External libraries:
+    * Updated FreeType2 to 2.4.12
+
+**(05-09-2013) - r36251**:
+
+  * Updated MPlayer to svn r36251
+  * Updated FFmpeg to git N-52919-ge4723a8
+
+  * External libraries:
+    * Updated zlib to 1.2.8
+
+**(05-06-2013) - r36243**:
+
+  * Updated MPlayer to svn r36243
+  * Updated FFmpeg to git N-52798-gf5846dc
+
+**(05-05-2013) - r36237**:
+
+  * Updated MPlayer to svn r36237
+  * Updated FFmpeg to git N-52748-g1ef82cc
+
+**(05-04-2013) - r36214**:
+
+  * Updated MPlayer to svn r36214
+  * Updated FFmpeg to git N-52727-gf18d2df
+
+**(05-02-2013) - r36207**:
+
+  * Updated MPlayer to svn r36207
+  * Updated FFmpeg to git N-52649-g6021615
+
+  * External libraries:
+    * Updated libbluray to 0.3.0
+    * Updated libpng to 1.6.2
+
+**(05-01-2013) - r36197**:
+
+  * Updated MPlayer to svn r36197
+  * Updated FFmpeg to git 14f45bc (r52593)
+
+  * External libraries:
+    * Updated x264 to git 76a5c3a
+    * Updated live555 to 2013.04.30
+
+**(04-26-2013) - r36175**:
+
+  * Updated MPlayer to svn r36175
+  * Updated FFmpeg to git 785eb5f (r52509)
+
+**(04-26-2013) - r36172-2**:
+
+  * Updated FFmpeg to git 05f4c05 (r52483)
+
+  * External libraries:
+    * Updated x264 to git 3b1f1f7
+    * Updated live555 to 2013.04.23
+
+**(04-19-2013) - r36172**:
+
+  * Updated MPlayer to svn r36172
+  * Updated FFmpeg to git b63f7b3 (r52262)
+
+  * External libraries:
+    * Updated libass to git ed55e32
+    * Updated fontconfig to 2.10.92
+    * Updated live555 to 2013.04.16
+
+**(04-11-2013) - r36170**:
+
+  * Updated MPlayer to svn r36170
+  * Updated FFmpeg to git 9ab7961 (r51975)
+
+**(04-05-2013) - r36169**: 
+
+  * Updated MPlayer to svn r36169
+  * Updated FFmpeg to git 37f080f (r51638)
+
+  * External libraries:
+    * Updated libass to git 68c3268
+    * Updated libmpg123 to 1.15.3
+    * Updated libpng to 1.6.1
+    * Updated live555 to 2013.04.05
+
+**(03-30-2013) - r36106**: 
+
+  * Updated MPlayer to svn r36106
+  * Updated FFmpeg to git 8cd7aab (r51471)
+
+  * External libraries:
+    * Updated libass to git d29915d
+
+**(03-29-2013) - r36089**:
+
+  * Updated MPlayer to svn r36089
+  * Updated FFmpeg to git 551f683 (r51433)
+
+  * External libraries:
+    * Updated libass to git 085666a
+    * Updated live555 to 2013.03.23
+
+**(03-24-2013) - r36050**:
+
+  * Updated MPlayer to svn r36050
+  * Updated FFmpeg to git 01a334e (r51249)
+
+**(03-19-2013) - r36021**:
+
+  * Updated MPlayer to svn r36021
+  * Updated FFmpeg to git db8403d (r51111)
+
+**(03-17-2013) - r36005**:
+
+  * Updated MPlayer to svn r36005
+  * Updated FFmpeg to git 76d1c07 (r51057)
+
+**(03-17-2013) - r35966**:
+
+  * Updated MPlayer to svn r35966
+  * Updated FFmpeg to git 8a523cf (r50955)
+
+**(03-16-2013) - r35968**:
+
+  * Updated MPlayer to svn r35968
+  * Updated FFmpeg to git 7d15cd4 (r50974)
+
+**(03-12-2013) - r35952**:
+
+  * Updated MPlayer to svn r35952
+  * Updated FFmpeg to git b5e5ed8 (r50663)
+
+  * External libraries:
+    * Added libmad 0.15.1b
+    * Updated polarssl to 1.2.6
+    * Updated rtmpdump to git df6c518
+
+**(03-09-2013) - r35935**:
+
+  * Updated MPlayer to svn r35935
+  * Updated FFmpeg to git 98c4268 (r50601)
+
+  * External libraries:
+    * Reverted libdvdcss to internal mplayer svn
+    * Updated live555 to 2013.03.07
+
+**(03-05-2013) - r35932**:
+
+  * Updated MPlayer to svn r35932
+  * Updated FFmpeg to git 715c230 (r50475)
+
+  * External libraries:
+    * Updated libass to git fc3b05f
+    * Updated live555 to 2013.02.27
+    * Updated x264 to git c832fe9
+
+**(03-01-2013) - r35927**:
+
+  * Updated MPlayer to svn r35927
+  * Updated FFmpeg to git e20f2dc (r50389)
+
+**(02-28-2013) - r35925**:
+
+  * Updated MPlayer to svn r35925
+  * Updated FFmpeg to git e54a1bd (r50368)
+
+  * External libraries:
+    * Updated x264 to git b3065e6
+
+Fixed a crash when using '-vo sdl'.
+
+**(02-25-2013) - r35923-2**:
+
+  * Updated FFmpeg to git 394130e (r50290)
+
+  * External libraries:
+    * Added live555 2013.02.11
+
+**(02-23-2013) - r35923**:
+
+ * Updated MPlayer to r35923
+ * Updated FFmpeg to git 066739f (r50209)
+
+ * External libraries:
+   * Added libgif 4.1.7
+   * Reverted fontconfig to 2.10.91
+
+**(02-20-2013) - r35922**:
+
+ * Updated MPlayer to r35922
+ * Updated FFmpeg to git 2ccaab9 (r50130)
+
+ * External libraries:
+   * Updated fontconfig to git 2c69625
+
+Fixed XP incompatibility.
+
+**(02-20-2013) - r35921**:
+
+ * Updated MPlayer to r35921
+ * Updated FFmpeg to git 8d1dd5b (r50109)
+
+ * External libraries:
+   * Added libilbc
+
+**(02-18-2013) - r35917**:
+
+ * Updated MPlayer to r35917
+ * Updated FFmpeg to git c63f9fb (r50056)
+
+**(02-15-2013) - r35915**:
+
+  * Updated MPlayer to r35915
+  * Updated FFmpeg to git 4a6fa79 (r49972)
+  * Updated internal libdvdcss to git 45999b7
+
+**(02-13-2013) - r35910-3**:
+
+  * Updated FFmpeg to git 5dd78ef (r49940)
+  * Added color console, which can be enabled via 'msgcolor=yes' in mplayer\config (patch originally by Sherpya)
+
+**(02-11-2013) - r35910-2**:
+
+  * Updated FFmpeg to git fd6a021 (r49805)
+
+**(02-08-2013) - r35910**:
+
+  * Updated MPlayer to r35910
+  * Updated FFmpeg to git 0d194ee (r49703)
+  * Updated internal libdvdread to git 121edec
+  * Updated internal libdvdnav to git 9487d1b
+
+[libmad](http://sourceforge.net/projects/mad/files/libmad/) has been dropped from this release. There should be sufficient MPEG audio decoding capabilities already present in FFmpeg and libmpg123.
+
+**(02-03-2013) - r35908**:
+
+  * Updated MPlayer to svn r35908
+  * Updated FFmpeg to git d106679 (r49564)
+
+This build fixes 'get_buffer() failed (stride changed)' error in some H264 files.
+
+**(01-31-2013) - r35906**:
+
+  * Updated MPlayer to svn r35906
+  * Updated FFmpeg to git 086566a (r49507)
+
+**(01-28-2013) - r35905**:
+
+  * Updated MPlayer to svn r35905
+  * Updated FFmpeg to git 4484c72
+
+  * External libraries:
+    * Updated libpng to 1.5.14
+    * Added libbz2 1.0.6
+
+**(01-26-2013) - r35901**:
+
+  * Updated MPlayer to svn r35901
+  * Updated FFmpeg to git 5de286e
+
+**(01-21-2013) - r35802**:
+
+  * Updated MPlayer to svn r35802
+  * Updated FFmpeg to git c74d465
+
+  * External libraries:
+    * Updated libjpeg to 9
+
+Minor enhancement: Adds an informational line above "Build date" to more easily identify the FFmpeg revision used.
+
+**(01-18-2013) - r35786**:
+
+  * Updated MPlayer to svn r35786
+  * Updated FFmpeg to git 040c461
+
+**(01-12-2013) - r35738**:
+
+  * Updated MPlayer to svn r35738
+  * Updated FFmpeg to git 2ea3f37
+
+  * External libraries:
+    * Updated libass to git 340ff8f
+    * Updated fontconfig to 2.10.91
+    * Updated x264 to git bc13772
+    * Updated rtmpdump to git 3a1e20c
+
+**(01-06-2013) - r35715**:
+
+  * Updated MPlayer to svn r35715
+  * Updated FFmpeg to git 79013a5 (1.1)
+
+  * External libraries:
+    * Added libgsm 1.0.13
+
+This build may fix _some_ cases of the "No Disk" error.
+
+**(01-01-2013) - r35712-2**:
+
+  * Updated FFmpeg to git 1e28fa2
+  * Added icon/version info for MEncoder
+
+  * External libraries:
+    * Updated libvpx to 1.2.0
+    * Removed Live555.
+
+rtsp:// urls, previously handled by Live555, are now handled by ffmpeg by prefixing it with ffmpeg:// (ex: ffmpeg://rtsp://url.to/stream). Pthreads (pthreadGC2.dll) has also been made static, no longer requiring the pthread dll to run.
+
+This build fixes "Unsupported PixelFormat" spamming that occurred with some H.264 videos.
+
+**(12-31-2012) - r35712**:
+
+  * Updated MPlayer to svn r35712
+  * Updated FFmpeg to git 9a74282
+
+This build fixes ASS/SSA subtitle corruption.
+
+**(12-30-2012) - r35710-2**:
+
+  * Updated FFmpeg to git b367453
+
+  * External libraries:
+    * Updated internal libass to git 7e45532
+    * Updated FreeType2 to 2.4.11
+
+**(12-24-2012) - r35710**:
+
+  * Updated MPlayer to svn r35710
+  * Updated FFmpeg to git ec40d15
+
+  * External libraries:
+    * Updated Live555 to 12.24.2012
+    * Added libmng 1.0.10
+
+This release fixes a "Ran out of numbered images" crash when seeking in H.264 files.
+
+**(12-20-2012) - r35701**:
+
+  * Updated MPlayer to svn r35701
+  * Updated FFmpeg to git 6375318
+
+A patch in libdvdnav (r1245) was reversed, which caused inability to play any DVDs using dvdnav://.
+
+**(12-17-2012) - r35691**:
+
+  * Updated MPlayer to svn r35691
+  * Updated FFmpeg to git 2e59142
+
+**(12-14-2012) - r35679**:
+
+  * Updated MPlayer to svn r35679
+  * Updated FFmpeg to git 616e6ff
+
+  * External libraries:
+    * Updated libx264 to git 1cffe9f
+    * Updated libvpx to git 7a09f6b
+    * Updated libopus to 1.0.2
+
+**(12-10-2012) - r35660**:
+
+  * Updated MPlayer to svn r35660
+  * Updated FFmpeg to git fd3cdca
+  * Reverted a change in FFmpeg (git 419ade4) that broke screenshot functionality
+
+MEncoder is now included in this package.
+
+**(12-09-2012) - r35625**:
+
+  * Updated MPlayer to r35625
+  * Updated FFmpeg to 4c554c9
+
+Initial release.
